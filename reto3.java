@@ -18,6 +18,7 @@ Ejemplos: José Martínez Pérez -> nombre: José, apellido1: Martínez, apellid
         System.out.println("Porfavor introduzca su nombre");
         //creacion de escaner
         Scanner sc = new Scanner(System.in);
+
         //damos limite al scanner para \n
         sc.useDelimiter("\n");
         String username = sc.next();
@@ -55,10 +56,12 @@ Ejemplos: José Martínez Pérez -> nombre: José, apellido1: Martínez, apellid
         String actualname = ""; // lo necesitaremos para ir guardando el nombre en la iteracion
         int listsize;  // necesitaremos el tamaño de la lista más adelante
         username = username + ' '; // necesitaremos añadir un espacio al final para que añada el útlimo nombre
+
         for(int i = 0 ; i < username.length(); i++) {
             if (username.charAt(i) == ' ') {
                 nameFinal.add(actualname);
                 actualname ="";
+
             }else{
                 actualname = actualname + username.charAt(i);
             }
@@ -67,25 +70,30 @@ Ejemplos: José Martínez Pérez -> nombre: José, apellido1: Martínez, apellid
 
             // comprobamos el tamaño de la lista
             listsize = nameFinal.size();
+
         String solucion = "";
+
         switch (numbersname) {
             case 0, 1 -> {
-                if (listsize == 0) {
+                if (listsize == 1) {
                     solucion = "Nombre: " + nameFinal.get(0);
 
-                } else if (listsize == 1) {
+                } else if (listsize == 2) {
                     solucion = "Nombre: " + nameFinal.get(0) + " Apellido: " + nameFinal.get(1);
+
                 } else {
                     solucion = "Nombre " + nameFinal.get(0) + " Apellido1: " + nameFinal.get(1) + " Apellido 2: " + nameFinal.get(2);
                 }
 
             }
+
             case 2 -> {
-                if (listsize == 0) {
+                if (listsize == 1) {
                     solucion = " Nombre: " + nameFinal.get(0);
 
-                } else if (listsize == 1) {
+                } else if (listsize == 2) {
                     solucion = " Nombre: " + nameFinal.get(0) + " Nombre2: " + nameFinal.get(1);
+
                 } else {
                     solucion = "Nombre " + nameFinal.get(0) + " Nombre2: " + nameFinal.get(1) + " Apellido 1: " + nameFinal.get(2);
                 }
